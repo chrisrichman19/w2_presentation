@@ -1,6 +1,6 @@
 ---
 title: "Sentinel 1c"
-subtitle: "test"  
+subtitle: "CASA0025 Remotely Sensing Presentation"  
 author: 
   - "Chris Richman"
 date: '`r Sys.Date()`'
@@ -37,280 +37,110 @@ style_duo_accent(
 )
 ```
 
-## Typography
+# Background
 
-Text can be **bold**, _italic_, ~~strikethrough~~, or `inline code`.
+- when (most recent launch of sentinel mission, 5th decemeber 2024) - launched from French Guinea
+- who (Joint initiative of the european commision and european space agency)
+- why (part of the Copernicus Sentinel 1 mission) 
+- all weather, day and night imagery for land and ocean services (even through cloud cover)) - sentinel 1b launched in 2016 but has been unavailable due to power issues since august 2022. Copernicus Sentinel 1 mission designed as a two satellite mission - will synchronise with Sentinel-1A - orbiting 180° apart, so can image the entire Earth every six days.
 
-[Link to another slide](#colors).
+source: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1 and https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Introducing_Sentinel-1
 
-### Lorem Ipsum
+```{r echo=FALSE, out.width=60%, fig.align='center'}
+knitr::include_graphics('img/Vega-C_lifts_off_with_Sentinel-1C_pillars.jpg')
+```
+Source: [European Space Agency](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Double_win_for_Europe_Sentinel-1C_and_Vega-C_take_to_the_skies)
 
-Dolor imperdiet nostra sapien scelerisque praesent curae metus facilisis dignissim tortor. 
-Lacinia neque mollis nascetur neque urna velit bibendum. 
-Himenaeos suspendisse leo varius mus risus sagittis aliquet venenatis duis nec.
-
-- Dolor cubilia nostra nunc sodales
-
-- Consectetur aliquet mauris blandit
-
-- Ipsum dis nec porttitor urna sed
 
 ---
 name: colors
 
-## Colors
+## Background 2:
 
-.left-column[
-Text color
+- what is its plan? 
 
-[Link Color](#3)
 
-**Bold Color**
+(synchronise with Sentinel-1A - to reduce revisit time of SAR images from every 10 days to 5 days.) - not a research satellite - climate change and disaster response (flooding earthquake events) - long-term monitoring Earth’s land, oceans and ice
+"Sentinel-1C introduces new capabilities for detecting and monitoring maritime traffic." Automatic Identification System?
 
-_Italic Color_
+The satellite is currently in its commissioning phase with **full operations** expecting to begin within the next few months.
 
-`Inline Code`
-]
 
-.right-column[
-Lorem ipsum dolor sit amet, [consectetur adipiscing elit (link)](#3), 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Erat nam at lectus urna.
-Pellentesque elit ullamcorper **dignissim cras tincidunt (bold)** lobortis feugiat. 
-_Eros donec ac odio tempor_ orci dapibus ultrices. 
-Id porta nibh venenatis cras sed felis eget velit aliquet.
-Aliquam id diam maecenas ultricies mi.
-Enim sit amet 
-`code_color("inline")`
-venenatis urna cursus eget nunc scelerisque viverra.
-]
 
 ---
 
-# Big Topic or Inverse Slides `#`
+# Key stats
 
-## Slide Headings `##`
-
-### Sub-slide Headings `###`
-
-#### Bold Call-Out `####`
-
-This is a normal paragraph text. Only use header levels 1-4.
-
-##### Possible, but not recommended `#####`
-
-###### Definitely don't use h6 `######`
-
----
-
-# Left-Column Headings
 
 .left-column[
-## First
+## Orbit Altitude: 693km
 
-## Second
+## Mission Life: 7 years
 
 ## Third
 ]
 
-.right-column[
-Dolor quis aptent mus a dictum ultricies egestas.
 
-Amet egestas neque tempor fermentum proin massa!
 
-Dolor elementum fermentum pharetra lectus arcu pulvinar.
-]
 
----
-class: inverse center middle
 
-# Topic Changing Interstitial
-
---
-
-```
-class: inverse center middle
-```
-
----
-layout: true
-
-## Blocks
 
 ---
 
-### Blockquote
+# Sensor
+## Synthetic Aperture Radar (SAR)
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+One of the key features of Sentinel-1c is the Synthetic Aperture Radar instrument onboard.
+
+C-band
 
 ---
 
-### Code Blocks
+# Applications: SHIP MONITORING
 
-#### R Code
+"Sentinel-1C will also carry a new Automatic Identification System (AIS), developed by the International Maritime Organisation to help ships avoid collisions at sea. The combination of radar images and AIS signals improves the monitoring of global shipping traffic and can also help detect piracy and other illegal activities."
 
-```{r eval=FALSE}
-ggplot(gapminder) +
-  aes(x = gdpPercap, y = lifeExp, size = pop, color = country) +
-  geom_point() +
-  facet_wrap(~year)
+overlaying ship data like location, course, and identity onto a satellite image, providing a comprehensive picture of maritime traffic
+
+https://www.gov.uk/government/news/sentinel-1c-new-radar-satellite-launched-into-space
+
+https://defence-industry-space.ec.europa.eu/waving-goodbye-2024-another-successful-copernicus-launch-sentinel-1c-now-orbit-2024-12-06_en
+
+improvement on Sentinel 1A which does not carry AIS system. will allow for tracing and identifying of ships
+
+
+OIL pollution monitoring
+
+evidence of illegal oil discharge
+
+"Oil slicks are distinctly visible in SAR imagery
+Detections can be correlated with Automatic Identification System (AIS) (Sentinel-1C only) information broadcasts from ships to determine sources and prosecute offenders."
+
+```{r echo=FALSE, out.width=60%, fig.align='center'}
+knitr::include_graphics('img/Oil_spill_spread.gif')
 ```
 
-#### JavaScript
+https://sentiwiki.copernicus.eu/web/s1-applications
 
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+"On 8 October 2018 at 05:28 GMT (07:28 CEST), the Copernicus Sentinel-1 mission captured its first images of the oil spill from a collision between two ships that had occurred the day before in the Mediterranean Sea, north of the French island of Corsica. This first image shows that the oil slick was about 20 km long. By the evening at 19:21 CEST, however, imagery shows that the slick had lengthened to about 35 km. And 24 hours later, on 9 October at 19:14 CEST, the slick had grown to about 60 km long."
+
+- combined with AIS system to identify ships.
 
 ---
 
-### More R Code
+# Reflection
 
-```{r eval=FALSE}
-dplyr::starwars %>% dplyr::slice_sample(n = 4)
-```
+how sattelittes can operate in pairs to reduce revisit time - and how they can still operate alone - when sentinel 1b was out of action for 2years.
 
----
+joint effort between many countries
 
-```{r message=TRUE, eval=requireNamespace("cli", quietly = TRUE)}
-cli::cli_alert_success("It worked!")
-```
-
---
-
-```{r message=TRUE}
-message("Just a friendly message")
-```
-
---
-
-```{r warning=TRUE}
-warning("This could be bad...")
-```
-
---
-
-```{r error=TRUE}
-stop("I hope you're sitting down for this")
-```
+replacement satellites - allow for new iterations of technologies to be introduced - especailly with 7 year lifecycle 
 
 
----
-layout: true
-
-## Tables
-
----
-exclude: `r if (requireNamespace("tibble", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("tibble", quietly=TRUE)}
-tibble::as_tibble(mtcars)
-```
+Sentinel 1D
 
 ---
 
-```{r}
-knitr::kable(head(mtcars), format = 'html')
-```
-
----
-exclude: `r if (requireNamespace("DT", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("DT", quietly=TRUE)}
-DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
-```
-
----
-layout: true
-
-## Lists
-
----
-
-.pull-left[
-#### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-]
-
-.pull-right[
-
-#### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-]
-
----
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
----
-
-### Nesting an ol in ul in an ol
-
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-
----
-layout: true
-
-## Plots
-
----
-
-```{r plot-example, eval=requireNamespace("ggplot2", quietly=TRUE)}
-library(ggplot2)
-(g <- ggplot(mpg) + aes(hwy, cty, color = class) + geom_point())
-```
-
----
-
-```{r plot-example-themed, eval=requireNamespace("showtext", quietly=TRUE) && requireNamespace("ggplot2", quietly=TRUE)}
-g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
-  ggtitle("A Plot About Cars")
-```
-
-.footnote[Requires `{showtext}`]
-
----
 layout: false
 
 ## Square image
@@ -340,24 +170,9 @@ layout: false
 ]
 
 ---
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
----
 class: center, middle
 
-# Thanks!
+# References!
 
 Slides created via the R packages:
 
