@@ -1,5 +1,5 @@
 ---
-title: "Sentinel 1c"
+title: "Sentinel-1c"
 subtitle: "CASA0025 Remotely Sensing Presentation"  
 author: 
   - "Chris Richman"
@@ -37,142 +37,156 @@ style_duo_accent(
 )
 ```
 
-# Background
+## Sentinel-1C: Background
 
-- when (most recent launch of sentinel mission, 5th decemeber 2024) - launched from French Guinea
-- who (Joint initiative of the european commision and european space agency)
-- why (part of the Copernicus Sentinel 1 mission) 
-- all weather, day and night imagery for land and ocean services (even through cloud cover)) - sentinel 1b launched in 2016 but has been unavailable due to power issues since august 2022. Copernicus Sentinel 1 mission designed as a two satellite mission - will synchronise with Sentinel-1A - orbiting 180° apart, so can image the entire Earth every six days.
+.pull-left[
+### Key Details
+- **Launch Date**: 5th December 2024 launched
+- **Who**: Joint initiative by the *European Commission* and *European Space Agency*
+- **Orbit Altitude**: 693km
+- **Mission Life**: 7 years
+
+### Mission Design
+- The Sentinel 1 mission was designed as a two satellite mission so the **Sentinel-1C** will synchronise with **Sentinel-1A** 180° apart.
+- It will replace **Sentinel-1B** which has been out of service due to power issues since August 2022 
+
 
 source: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1 and https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Introducing_Sentinel-1
 
-```{r echo=FALSE, out.width=60%, fig.align='center'}
-knitr::include_graphics('img/Vega-C_lifts_off_with_Sentinel-1C_pillars.jpg')
-```
-Source: [European Space Agency](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Double_win_for_Europe_Sentinel-1C_and_Vega-C_take_to_the_skies)
+]
+
+.pull-right[
+![Sentinel 1C Launch](img/Vega-C_lifts_off_with_Sentinel-1C_pillars.jpg)
 
 
+**Sentinel 1C Launch**
+*Source*: [*European Space Agency*](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Double_win_for_Europe_Sentinel-1C_and_Vega-C_take_to_the_skies)
+
+]
 ---
 name: colors
 
-## Background 2:
+## Sentinel-1C: Background
 
-- what is its plan? 
+.pull-left[
+### Sentinel 1 mission focus
+
+-  Provide all weather, day and night imagery for land and ocean services:  
+    - **Climate change monitoring**  
+    - **Disaster response** (e.g., flooding, earthquake events)  
+    - **Long-term Earth observation** of land, oceans, and ice
 
 
-(synchronise with Sentinel-1A - to reduce revisit time of SAR images from every 10 days to 5 days.) - not a research satellite - climate change and disaster response (flooding earthquake events) - long-term monitoring Earth’s land, oceans and ice
-"Sentinel-1C introduces new capabilities for detecting and monitoring maritime traffic." Automatic Identification System?
+**Sentinel 1C** is currently in its commissioning phase with **full operations** expecting to begin within the next few months. 
+- Once it is synchronised it will reduce revisit time of images from every **12 days** to every **6 days**.
+]
 
-The satellite is currently in its commissioning phase with **full operations** expecting to begin within the next few months.
+.pull-right[
+
+**First Image from Sentinel-1C: Svalbard, Norway**
+*Source: [ESA](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Sentinel-1C_captures_first_radar_images)*
+
+![Sentinel 1C First Image](img/Svalbard_Norway_seen_from_Sentinel-1C_article.jpg)
+]
+
+
+---
+## Synthetic Aperture Radar (SAR)
+
+
+One of the key features of Sentinel 1 satellites is the Synthetic Aperture Radar instrument onboard.
+.pull-left[
+#### What is it?
+- An active radar sensor that creates high-resolution images of Earth. 
+- Capable of imaging through clouds and in total darkness, making it valuable for all-weather, day-and-night applications.
+- Operates in four imaging modes with resolution ranging from 5m to 400 km.
+]
+
+.pull-right[
+#### How does it work?
+
+-  transmit microwave radar pulses to Earth's surface, which reflect and return to the receiver
+- As the radar antenna moves along its flight path, it captures reflections from the same area at different angles.
+- These multiple angles simulate a larger "synthetic aperture" for higher resolution.
+- Signal processing algorithms then reconstruct these reflections into 2D images of the surface
+]
+
+
+---
+
+
+# Applications: SHIP MONITORING
+
+Sentintel-1C offers an improvement on Sentinel-1A's ship monitoring capabilities with the addition of Automatic Identification System (AIS):
+
+
+- AIS is a system where ships report their identities and position.
+  - Combines radar imagery with AIS signals, wil be able to provide detailed information about ship location, course, and identity.
+  - Enabling a view of global shipping traffic and assist in detecting illegal piracy.
 
 
 
 ---
 
-# Key stats
 
 
-.left-column[
-## Orbit Altitude: 693km
 
-## Mission Life: 7 years
+# Application: Oil pollution monitoring
 
-## Third
+
+- Oil slicks are distinctly in SAR images
+- Detection can now be combined with AIS to help determine the offending ship/s.
+
+.pull-left[
+In the gif on the right, Sentinel-1A captures an oil spill from a ship collision near Corsica, France.
+
+Combined with AIS data, the Sentinel-1 mission can now help identify responsible ships and support environmental enforcement efforts.
+
+Image Source:
+https://sentiwiki.copernicus.eu/web/s1-applications
+]
+
+.pull-right[
+![Sentinel 1A Oil Spill](img/Oil_spill_spread.gif)
 ]
 
 
 
-
-
-
----
-
-# Sensor
-## Synthetic Aperture Radar (SAR)
-
-One of the key features of Sentinel-1c is the Synthetic Aperture Radar instrument onboard.
-
-C-band
-
----
-
-# Applications: SHIP MONITORING
-
-"Sentinel-1C will also carry a new Automatic Identification System (AIS), developed by the International Maritime Organisation to help ships avoid collisions at sea. The combination of radar images and AIS signals improves the monitoring of global shipping traffic and can also help detect piracy and other illegal activities."
-
-overlaying ship data like location, course, and identity onto a satellite image, providing a comprehensive picture of maritime traffic
-
-https://www.gov.uk/government/news/sentinel-1c-new-radar-satellite-launched-into-space
-
-https://defence-industry-space.ec.europa.eu/waving-goodbye-2024-another-successful-copernicus-launch-sentinel-1c-now-orbit-2024-12-06_en
-
-improvement on Sentinel 1A which does not carry AIS system. will allow for tracing and identifying of ships
-
-
-OIL pollution monitoring
-
-evidence of illegal oil discharge
-
-"Oil slicks are distinctly visible in SAR imagery
-Detections can be correlated with Automatic Identification System (AIS) (Sentinel-1C only) information broadcasts from ships to determine sources and prosecute offenders."
-
-```{r echo=FALSE, out.width=60%, fig.align='center'}
-knitr::include_graphics('img/Oil_spill_spread.gif')
-```
-
-https://sentiwiki.copernicus.eu/web/s1-applications
-
-"On 8 October 2018 at 05:28 GMT (07:28 CEST), the Copernicus Sentinel-1 mission captured its first images of the oil spill from a collision between two ships that had occurred the day before in the Mediterranean Sea, north of the French island of Corsica. This first image shows that the oil slick was about 20 km long. By the evening at 19:21 CEST, however, imagery shows that the slick had lengthened to about 35 km. And 24 hours later, on 9 October at 19:14 CEST, the slick had grown to about 60 km long."
-
-- combined with AIS system to identify ships.
 
 ---
 
 # Reflection
 
-how sattelittes can operate in pairs to reduce revisit time - and how they can still operate alone - when sentinel 1b was out of action for 2years.
-
-joint effort between many countries
-
-replacement satellites - allow for new iterations of technologies to be introduced - especailly with 7 year lifecycle 
-
-
-Sentinel 1D
-
----
-
-layout: false
-
-## Square image
-
-<center><img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" height="400px" /></center>
-
-.footnote[GitHub Octocat]
-
----
-
-### Wide image
-
-![A wide image with a diagram of branching in git.](https://docs.github.com/assets/images/help/repository/branching.png)
-
-.footnote[Wide images scale to 100% slide width]
-
----
-
-## Two images
 
 .pull-left[
-![A GitHub Octocat, style "mother hubber"](https://octodex.github.com/images/motherhubbertocat.png)
+### Working in pairs vs Solo
+
+- I found it interesting to learn how satellites can work in pairs in order to reduce revisit time. 
+- Despite the high costs of sattellites, I think this highlights the value and importance of frequent and available data of the Earth's surface. Monitoring would not be so useful if the revisit time is too long.  
+- This also increases the resilience of the mission as the mission remained operational despite Sentinel-1B's two-year downtime.
 ]
 
+
 .pull-right[
-![A GitHub Octocat, style "dinotcat"](https://octodex.github.com/images/dinotocat.png)
+### Room for improvement with each launch
+
+- These satellites have a 5–7 year lifecycle, creating opportunities to upgrade technology with each replacement.
+- This does not seem long, and it means the ESA are constantly planning for new launches and contingency plans.
+- but on the other hand it does allow each new satellite to learn from its predecessors and not be limited beacuse of aging technology.
+
+
 ]
+
+
+
+---
+
+
 
 ---
 class: center, middle
 
-# References!
+# References
 
 Slides created via the R packages:
 

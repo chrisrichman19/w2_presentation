@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sentinel 1c</title>
+    <title>Sentinel-1c</title>
     <meta charset="utf-8" />
     <meta name="author" content="Chris Richman" />
-    <meta name="date" content="2025-01-26" />
+    <meta name="date" content="2025-01-28" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
-    <link href="index_files/htmltools-fill/fill.css" rel="stylesheet" />
-    <script src="index_files/htmlwidgets/htmlwidgets.js"></script>
-    <link href="index_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-    <script src="index_files/datatables-binding/datatables.js"></script>
-    <script src="index_files/jquery/jquery-3.6.0.min.js"></script>
-    <link href="index_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="index_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-    <script src="index_files/dt-core/js/jquery.dataTables.min.js"></script>
-    <link href="index_files/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
-    <script src="index_files/crosstalk/js/crosstalk.min.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -23,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sentinel 1c
+# Sentinel-1c
 ]
 .subtitle[
 ## CASA0025 Remotely Sensing Presentation
@@ -32,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### Chris Richman
 ]
 .date[
-### 2025-01-26
+### 2025-01-28
 ]
 
 ---
@@ -42,479 +32,157 @@ class: center, middle, inverse, title-slide
 
 
 
-# Background
+## Sentinel-1C: Background
 
-- when (most recent launch of sentinel mission, 5th decemeber 2024) - launched from French Guinea
-- who (Joint initiative of the european commision and european space agency)
-- why (part of the sentinel 1 mission - all weather, day and night imagery for land and ocean services (even through cloud cover)) - sentinel 1b launched in 2016 but has been unavailable due to power issues since august 2022
-- what is its plan? (synchronise with Sentinel-1A - to reduce revisit time of SAR images from every 10 days to 5 days.) - not a research satellite - long term monitoring of sea ice, flooding earthquake events, impacts of climate change
+.pull-left[
+### Key Details
+- **Launch Date**: 5th December 2024 launched
+- **Who**: Joint initiative by the *European Commission* and *European Space Agency*
+- **Orbit Altitude**: 693km
+- **Mission Life**: 7 years
 
-The satellite is currently in its commissioning phase - operations are expected to begin in the next few months.
-
-nice picture - first images
-
-&lt;img src="img/Sentinel-1_detects_maritime_traffic.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+### Mission Design
+- The Sentinel 1 mission was designed as a two satellite mission so the **Sentinel-1C** will synchronise with **Sentinel-1A** 180° apart.
+- It will replace **Sentinel-1B** which has been out of service due to power issues since August 2022 
 
 
+source: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1 and https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Introducing_Sentinel-1
 
+]
+
+.pull-right[
+![Sentinel 1C Launch](img/Vega-C_lifts_off_with_Sentinel-1C_pillars.jpg)
+
+
+**Sentinel 1C Launch**
+*Source*: [*European Space Agency*](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Double_win_for_Europe_Sentinel-1C_and_Vega-C_take_to_the_skies)
+
+]
 ---
 name: colors
 
-## Key stats:
+## Sentinel-1C: Background
 
-.left-column[
-Text color
+.pull-left[
+### Sentinel 1 mission focus
 
-[Link Color](#3)
+-  Provide all weather, day and night imagery for land and ocean services:  
+    - **Climate change monitoring**  
+    - **Disaster response** (e.g., flooding, earthquake events)  
+    - **Long-term Earth observation** of land, oceans, and ice
 
-**Bold Color**
 
-_Italic Color_
-
-`Inline Code`
+**Sentinel 1C** is currently in its commissioning phase with **full operations** expecting to begin within the next few months. 
+- Once it is synchronised it will reduce revisit time of images from every **12 days** to every **6 days**.
 ]
 
-.right-column[
-Lorem ipsum dolor sit amet, [consectetur adipiscing elit (link)](#3), 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Erat nam at lectus urna.
-Pellentesque elit ullamcorper **dignissim cras tincidunt (bold)** lobortis feugiat. 
-_Eros donec ac odio tempor_ orci dapibus ultrices. 
-Id porta nibh venenatis cras sed felis eget velit aliquet.
-Aliquam id diam maecenas ultricies mi.
-Enim sit amet 
-`code_color("inline")`
-venenatis urna cursus eget nunc scelerisque viverra.
+.pull-right[
+
+**First Image from Sentinel-1C: Svalbard, Norway**
+*Source: [ESA](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Sentinel-1C_captures_first_radar_images)*
+
+![Sentinel 1C First Image](img/Svalbard_Norway_seen_from_Sentinel-1C_article.jpg)
 ]
+
 
 ---
-
-# Summary: Sensor
-
 ## Synthetic Aperture Radar (SAR)
 
-One of the key features of Sentinel-1c is the Synthetic Aperture Radar instrument onboard.
 
-
-#### Bold Call-Out `####`
-
-This is a normal paragraph text. Only use header levels 1-4.
-
-##### Possible, but not recommended `#####`
-
-###### Definitely don't use h6 `######`
-
----
-
-# Application
-
-.left-column[
-## First
-
-## Second
-
-## Third
-]
-
-.right-column[
-Dolor quis aptent mus a dictum ultricies egestas.
-
-Amet egestas neque tempor fermentum proin massa!
-
-Dolor elementum fermentum pharetra lectus arcu pulvinar.
-]
-
----
-class: inverse center middle
-
-# Topic Changing Interstitial
-
---
-
-```
-class: inverse center middle
-```
-
----
-layout: true
-
-## Blocks
-
----
-
-### Blockquote
-
-&gt; This is a blockquote following a header.
-&gt;
-&gt; When something is important enough, you do it even if the odds are not in your favor.
-
----
-
-### Code Blocks
-
-#### R Code
-
-
-``` r
-ggplot(gapminder) +
-  aes(x = gdpPercap, y = lifeExp, size = pop, color = country) +
-  geom_point() +
-  facet_wrap(~year)
-```
-
-#### JavaScript
-
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
----
-
-### More R Code
-
-
-``` r
-dplyr::starwars %&gt;% dplyr::slice_sample(n = 4)
-```
-
----
-
-
-``` r
-cli::cli_alert_success("It worked!")
-```
-
-```
-## ✔ It worked!
-```
-
---
-
-
-``` r
-message("Just a friendly message")
-```
-
-```
-## Just a friendly message
-```
-
---
-
-
-``` r
-warning("This could be bad...")
-```
-
-```
-## Warning: This could be bad...
-```
-
---
-
-
-``` r
-stop("I hope you're sitting down for this")
-```
-
-```
-## Error: I hope you're sitting down for this
-```
-
-
----
-layout: true
-
-## Tables
-
----
-exclude: false
-
-
-``` r
-tibble::as_tibble(mtcars)
-```
-
-```
-## # A tibble: 32 × 11
-##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4
-##  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4
-##  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1
-##  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1
-##  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2
-##  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1
-##  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4
-##  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2
-##  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
-## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
-## # ℹ 22 more rows
-```
-
----
-
-
-``` r
-knitr::kable(head(mtcars), format = 'html')
-```
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; mpg &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; cyl &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; disp &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; hp &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; drat &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; wt &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; qsec &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; vs &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; am &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; gear &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; carb &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Mazda RX4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 160 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 110 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.90 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.620 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 16.46 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Mazda RX4 Wag &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 21.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 160 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 110 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.90 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.875 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 17.02 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Datsun 710 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 22.8 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 108 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 93 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.85 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.320 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18.61 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Hornet 4 Drive &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 21.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 258 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 110 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.08 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.215 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 19.44 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Hornet Sportabout &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 360 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 175 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.15 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.440 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 17.02 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Valiant &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 225 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 105 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2.76 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.460 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 20.22 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
----
-exclude: false
-
-
-``` r
-DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
-```
-
-<div class="datatables html-widget html-fill-item" id="htmlwidget-49611c5a1e255e573d2f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-49611c5a1e255e573d2f">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"mpg","targets":1},{"name":"cyl","targets":2},{"name":"disp","targets":3},{"name":"hp","targets":4},{"name":"drat","targets":5},{"name":"wt","targets":6},{"name":"qsec","targets":7},{"name":"vs","targets":8},{"name":"am","targets":9},{"name":"gear","targets":10},{"name":"carb","targets":11}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-
----
-layout: true
-
-## Lists
-
----
-
+One of the key features of Sentinel 1 satellites is the Synthetic Aperture Radar instrument onboard.
 .pull-left[
-#### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+#### What is it?
+- An active radar sensor that creates high-resolution images of Earth. 
+- Capable of imaging through clouds and in total darkness, making it valuable for all-weather, day-and-night applications.
+- Operates in four imaging modes with resolution ranging from 5m to 400 km.
 ]
 
 .pull-right[
+#### How does it work?
 
-#### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
+-  transmit microwave radar pulses to Earth's surface, which reflect and return to the receiver
+- As the radar antenna moves along its flight path, it captures reflections from the same area at different angles.
+- These multiple angles simulate a larger "synthetic aperture" for higher resolution.
+- Signal processing algorithms then reconstruct these reflections into 2D images of the surface
 ]
 
----
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
----
-
-### Nesting an ol in ul in an ol
-
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-
----
-layout: true
-
-## Plots
 
 ---
 
 
-``` r
-library(ggplot2)
-(g &lt;- ggplot(mpg) + aes(hwy, cty, color = class) + geom_point())
-```
+# Applications: SHIP MONITORING
 
-&lt;img src="index_files/figure-html/plot-example-1.png" width="100%" /&gt;
-
----
+Sentintel-1C offers an improvement on Sentinel-1A's ship monitoring capabilities with the addition of Automatic Identification System (AIS):
 
 
-``` r
-g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
-  ggtitle("A Plot About Cars")
-```
+- AIS is a system where ships report their identities and position.
+  - Combines radar imagery with AIS signals, wil be able to provide detailed information about ship location, course, and identity.
+  - Enabling a view of global shipping traffic and assist in detecting illegal piracy.
 
-.footnote[Requires `{showtext}`]
 
----
-layout: false
-
-## Square image
-
-&lt;center&gt;&lt;img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" height="400px" /&gt;&lt;/center&gt;
-
-.footnote[GitHub Octocat]
 
 ---
 
-### Wide image
 
-![A wide image with a diagram of branching in git.](https://docs.github.com/assets/images/help/repository/branching.png)
 
-.footnote[Wide images scale to 100% slide width]
 
----
+# Application: Oil pollution monitoring
 
-## Two images
+
+- Oil slicks are distinctly in SAR images
+- Detection can now be combined with AIS to help determine the offending ship/s.
 
 .pull-left[
-![A GitHub Octocat, style "mother hubber"](https://octodex.github.com/images/motherhubbertocat.png)
+In the gif on the right, Sentinel-1A captures an oil spill from a ship collision near Corsica, France.
+
+Combined with AIS data, the Sentinel-1 mission can now help identify responsible ships and support environmental enforcement efforts.
+
+Image Source:
+https://sentiwiki.copernicus.eu/web/s1-applications
 ]
 
 .pull-right[
-![A GitHub Octocat, style "dinotcat"](https://octodex.github.com/images/dinotocat.png)
+![Sentinel 1A Oil Spill](img/Oil_spill_spread.gif)
 ]
+
+
+
 
 ---
 
-### Definition lists can be used with HTML syntax.
+# Reflection
 
-&lt;dl&gt;
-&lt;dt&gt;Name&lt;/dt&gt;
-&lt;dd&gt;Godzilla&lt;/dd&gt;
-&lt;dt&gt;Born&lt;/dt&gt;
-&lt;dd&gt;1952&lt;/dd&gt;
-&lt;dt&gt;Birthplace&lt;/dt&gt;
-&lt;dd&gt;Japan&lt;/dd&gt;
-&lt;dt&gt;Color&lt;/dt&gt;
-&lt;dd&gt;Green&lt;/dd&gt;
-&lt;/dl&gt;
+
+.pull-left[
+### Working in pairs vs Solo
+
+- I found it interesting to learn how satellites can work in pairs in order to reduce revisit time. 
+- Despite the high costs of sattellites, I think this highlights the value and importance of frequent and available data of the Earth's surface. Monitoring would not be so useful if the revisit time is too long.  
+- This also increases the resilience of the mission as the mission remained operational despite Sentinel-1B's two-year downtime.
+]
+
+
+.pull-right[
+### Room for improvement with each launch
+
+- These satellites have a 5–7 year lifecycle, creating opportunities to upgrade technology with each replacement.
+- This does not seem long, and it means the ESA are constantly planning for new launches and contingency plans.
+- but on the other hand it does allow each new satellite to learn from its predecessors and not be limited beacuse of aging technology.
+
+
+]
+
+A global effor
+
+
+---
+
+
 
 ---
 class: center, middle
 
-# Thanks!
+# References
 
 Slides created via the R packages:
 
