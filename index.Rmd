@@ -51,7 +51,6 @@ style_duo_accent(
 - It will replace **Sentinel-1B** which has been out of service due to power issues since August 2022 
 
 
-source: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1 and https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Introducing_Sentinel-1
 
 ]
 
@@ -113,6 +112,30 @@ One of the key features of Sentinel 1 satellites is the Synthetic Aperture Radar
 
 
 ---
+# Applications: Disaster Response  - Floods 
+
+.pull-left[
+
+- **All-Weather Imaging:** Data in any conditions (clouds, night, rain).
+- **Frequent Revisits:** Tracks evolving situations with quick revisit time.
+- **Water Detection:** Calm water has low SAR backscatter, easy to identify against land.
+
+#### Example: Bangladesh Floods:
+
+- Sentinel-1 mapped flood extent in Bangladesh.
+- Copernicus EMS used Sentinel-1 data for rapid mapping.
+- Enabled assessment of human and environmental impact.
+]
+
+
+.pull-right[
+image source: [ESA, 2022](https://www.esa.int/ESA_Multimedia/Images/2022/06/Copernicus_Sentinel-1_maps_Bangladesh_flood)
+![Bangladesh Floods](img/Bangladesh_flood_pillars.gif)
+
+
+]
+
+---
 
 
 # Applications: SHIP MONITORING
@@ -123,6 +146,7 @@ Sentintel-1C offers an improvement on Sentinel-1A's ship monitoring capabilities
 - AIS is a system where ships report their identities and position.
   - Combines radar imagery with AIS signals, wil be able to provide detailed information about ship location, course, and identity.
   - Enabling a view of global shipping traffic and assist in detecting illegal piracy.
+
 
 
 
@@ -142,8 +166,7 @@ In the gif on the right, Sentinel-1A captures an oil spill from a ship collision
 
 Combined with AIS data, the Sentinel-1 mission can now help identify responsible ships and support environmental enforcement efforts.
 
-Image Source:
-https://sentiwiki.copernicus.eu/web/s1-applications
+Image Source: [ESA](https://www.esa.int/ESA_Multimedia/Images/2018/10/Oil_spill_spread#:~:text=On%208%20October%202018%20at,was%20about%2020%20km%20long.)
 ]
 
 .pull-right[
@@ -170,16 +193,13 @@ https://sentiwiki.copernicus.eu/web/s1-applications
 .pull-right[
 ### Room for improvement with each launch
 
-- These satellites have a 5–7 year lifecycle, creating opportunities to upgrade technology with each replacement.
+- These satellites have a 5–7 year life cycle, creating opportunities to upgrade technology with each replacement.
 - This does not seem long, and it means the ESA are constantly planning for new launches and contingency plans.
-- but on the other hand it does allow each new satellite to learn from its predecessors and not be limited beacuse of aging technology.
+- but on the other hand it does allow each new satellite to learn from its predecessors and not be limited because of aging technology.
 
 
 ]
 
-
-
----
 
 
 
@@ -187,6 +207,11 @@ https://sentiwiki.copernicus.eu/web/s1-applications
 class: center, middle
 
 # References
+
+
+Torres, R. et al. (2017) ‘Sentinel 1 evolution: Sentinel-1C and -1D models’, in 2017 IEEE International Geoscience and Remote Sensing Symposium (IGARSS). 2017 IEEE International Geoscience and Remote Sensing Symposium (IGARSS), pp. 5549–5550. Available at: https://doi.org/10.1109/IGARSS.2017.8128261.
+
+
 
 Slides created via the R packages:
 
